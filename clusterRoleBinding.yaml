@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: loadbalancer-watcher-binding
+subjects:
+- kind: ServiceAccount
+  name: loadbalancer-watcher-sa
+  # namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: loadbalancer-watcher
+  apiGroup: rbac.authorization.k8s.io
